@@ -91,15 +91,15 @@ while isRightQuartet == False:
     # if rightness[0] == 1:
     # print('in stage 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         
-    print(E0KaPa[0], E0KcPc[0], E0KaPa[0] ^ E0KcPc[0], gamma[1])
-    print(E0KaPa[1], E0KcPc[1], E0KaPa[1] ^ E0KcPc[1], gamma[0])
+    # print(E0KaPa[0], E0KcPc[0], E0KaPa[0] ^ E0KcPc[0], gamma[1])
+    # print(E0KaPa[1], E0KcPc[1], E0KaPa[1] ^ E0KcPc[1], gamma[0])
     
     # print(E0KbPb[0], E0KdPd[0], E0KbPb[0] ^ E0KdPd[0], gamma[1])
     # print(E0KbPb[1], E0KdPd[1], E0KbPb[1] ^ E0KdPd[1], gamma[0])
     
     if (E0KbPb[0] ^ E0KdPd[0] == gamma[1]) and (E0KbPb[1] ^ E0KdPd[1] == gamma[0]):
         rightness[1] = 1
-        print('wtaf!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print('the implied statement is correct')
         
     if (E0KaPa[0] ^ E0KcPc[0] == gamma[1]) and (E0KaPa[1] ^ E0KcPc[1] == gamma[0]):
         rightness[1] = 1
