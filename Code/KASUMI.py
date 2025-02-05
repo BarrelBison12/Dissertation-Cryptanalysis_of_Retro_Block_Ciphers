@@ -183,14 +183,13 @@ def KASUMI(data, round):
     #     temp = FL(temp, n)
     #     left ^= temp
     #     n += 1
-
     if round == 3:
-        # print('KLi1', KLi1)
         # ROUND 1
         n = 0
         temp = FL(left, n)
         temp = FO(temp, n)
         right ^= temp
+        
         n += 1
         # ROUND 2
         temp = FO(right, n)
@@ -202,8 +201,25 @@ def KASUMI(data, round):
         temp = FO(temp, n)
         right ^= temp 
     elif round == 4:
+        # print('KLi1', KLi1)
+        # ROUND 1
+        n = 0
+        temp = FL(left, n)
+        temp = FO(temp, n)
+        right ^= temp
+        
+        n += 1
+        # ROUND 2
+        temp = FO(right, n)
+        temp = FL(temp, n)
+        left ^= temp
+        n += 1
+        # ROUND 3
+        temp = FL(left, n)
+        temp = FO(temp, n)
+        right ^= temp 
         # ROUND 4
-        n = 4
+        n += 1
         temp = FO(right, n)
         temp = FL(temp, n)
         left ^= temp
@@ -223,6 +239,35 @@ def KASUMI(data, round):
         temp = FL(left, n)
         temp = FO(temp, n)
         right ^= temp
+    elif round == -7:
+        n = 7
+        # ROUND 7
+        temp = FL(right, n)
+        temp = FO(temp, n)
+        left ^= temp
+        n -= 1
+        
+        # ROUND 6
+        temp = FO(left, n)
+        temp = FL(temp, n)
+        right ^= temp
+        n -= 1
+
+        # ROUND 5
+        temp = FL(right, n)
+        temp = FO(temp, n)
+        left ^= temp
+    elif round == -8:
+        n = 8
+        while n <= 0:
+            temp = FL(right, n)
+            temp = FO(temp, n)
+            left ^= temp
+            n -= 1
+            temp = FO(left, n)
+            temp = FL(temp, n)
+            right ^= temp
+            n -= 1
     else:
         n = 0
         while n <= 7:
@@ -295,18 +340,19 @@ def KeySchedule(key):
 # key = format(key, '0128b')
 # KeySchedule(key)
 
-# # print('KOi1')
-# # for block in KOi1:
-# #     print(hex(block))
+# # # print('KOi1')
+# # # for block in KOi1:
+# # #     print(hex(block))
 
 # plainText = 0xfedcba0987654321 # 64-bit
 # plainText = format(plainText, '064b')
-# print('pt', plainText)
+# print('pt', hex(int(plainText, 2)))
 # cipherText = 0x514896226caa4f20
 
 
-# answer = KASUMI(plainText)
+# answer = KASUMI(plainText, 8)
+# decAns = KASUMI(plainText, -8)
 # print('ans', hex(int(answer, 2)))
-# print(answer)
+# print('decans', hex(int(decAns, 2)))
 # print(hex(cipherText))
 # assert hex(cipherText) == hex(int(answer, 2)), "Ruh Roh"
