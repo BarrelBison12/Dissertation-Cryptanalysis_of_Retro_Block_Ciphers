@@ -1,0 +1,35 @@
+File created 
+Test finished
+Number of right quartets: 5
+Test finished
+Number of right quartets: 6
+Test finished
+Number of right quartets: 2
+Test finished
+Number of right quartets: 6
+Test finished
+Number of right quartets: 7
+Test finished
+Number of right quartets: 3
+Test finished
+Number of right quartets: 5
+Test finished
+Number of right quartets: 3
+Test finished
+Number of right quartets: 1
+Test finished
+Number of right quartets: 4
+Test finished
+Number of right quartets: 4
+Test finished
+Number of right quartets: 3
+Test finished
+Number of right quartets: 4
+Test finished
+Number of right quartets: 1
+Test finished
+Number of right quartets: 3
+Test finished
+Number of right quartets: 5
+Test finished
+Number of right quartets: 4

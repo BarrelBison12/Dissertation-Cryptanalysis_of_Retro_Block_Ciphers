@@ -261,7 +261,7 @@ def sandwichEnc(text, key):
 
     return x, y, c
 
-def sandwichDenc(text, key):
+def sandwichDec(text, key):
     myKasumi = Kasumi()
     myKasumi.set_key(key)
 
